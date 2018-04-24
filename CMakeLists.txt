@@ -17,7 +17,7 @@ set(CONAN_LIBS -pthread boost_exception boost_iostreams boost_locale boost_log b
 
 # Main program
 set(SOURCE_FILES main.cpp define.hpp wallet_functions.hpp)
-add_executable(bitprim_core_lib_example ${SOURCE_FILES} define.hpp wallet_functions.hpp)
+add_executable(bitprim_core_lib_example ${SOURCE_FILES})
 
 # Link the libs
 target_link_libraries(bitprim_core_lib_example PUBLIC bitprim-core ${CONAN_LIBS})
