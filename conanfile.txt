@@ -1,0 +1,13 @@
+[requires]
+bitprim-core/0.9.1@bitprim/testing
+
+[options]
+# bitprim-core:shared=True
+
+[imports]
+include/bitcoin, *.h -> ./include/bitcoin
+include/bitcoin, *.hpp -> ./include/bitcoin
+include/bitcoin, *.ipp -> ./include/bitcoin
+
+lib, *.so -> ./lib
+lib, *.a -> ./lib
