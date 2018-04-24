@@ -39,6 +39,10 @@ Wallet cashAddress (Imported): bchtest:qpzz8n7jp6847yyx8t33matrgcsdx6c0cvleatp70
 * A C++11 compiler, currently minimum [GCC 4.8.0](https://gcc.gnu.org/projects/cxx0x.html) or Clang based on [LLVM 3.5](http://llvm.org/releases/3.5.0/docs/ReleaseNotes.html).
 * [CMake](https://cmake.org/) minimum 3.7
 * [Conan](https://conan.io/) minimum 1.2.3. [Conan installation guide](http://docs.conan.io/en/latest/installation.html) (Conan itself requires Python, Pip and CMake)
+* Add the Bitprim's Conan Remote
+ ```
+conan remote add bitprim https://api.bintray.com/conan/bitprim/bitprim
+```
 
 # Build and run the example:
 ```
@@ -62,7 +66,6 @@ Download Bitprim-core and all it's dependencies using conan install and the `con
 
 If the libs are already built for your architecture conan will download the already built lib, if not it'll download the source code and built it locally.
 
-When the conan install is called, Conan will download `Boost`, `GMP`, `ICU`, `secp256k1` and `Bitprim-core`. This libs will not be installed in your PC, they'll stay in the conan sandbox.
-
+When the conan install is called, Conan will download `Boost`, `GMP`, `ICU`, `secp256k1` and `Bitprim-core`. This libs will be downloaded to the local conan sandbox.
 
 In your project include the path to the include and lib folders and link the libs to the main program.
