@@ -3,6 +3,26 @@ This is an example on how to use bitprim-core as a cpp lib.
 
 Note: this example is using linux as OS. To use bitprim-core as a windows lib the conanfile.txt needs to be modified to copy the `.dll` instead of the `.so` files.
 
+# Example:
+
+This example is a small program that uses bitprim-core lib to create some wallets.
+
+The `wallet_functions.hpp` file has all the calls (to the bitprim-core lib) that are need in order to creates private keys, public keys and wallets.
+
+The `main.cpp` uses the wallet functions to create a wallet for testnet and mainnet, encoded in legacy format and cashAddr.
+
+```
+./bitprim_core_lib_example
+Private key:                  b89d02a452a142f241d622f806aa1098e1afc3a007097f00966f9a8c900648e8
+Mainnet wallet (WIF):         5KDbHFeEBqmBeQDsBfXB4A4Y9v8SjuBvuMthoq8bWMvXDHPqvYg
+Testnet wallet (WIF):         92zDrzTmn4qKcTj9p1R5vkcVoaV9u4j8FJketTV6r6fZzFnZoUv
+Public key:                   04278f7bfee4ef625f85279c3a01d57c22e2877a902128b2df85071f9d6c95b290f094f5bd1bff5880d09cc231c774d71ac22d3ab9bdd9dda2e75017b52d893367
+Wallet Address (Mainnet):     17DHrHvtmMRs9ciersFCPNhvJtryd5NWbT
+Wallet cashAddress (Mainnet): bitcoincash:qpzz8n7jp6847yyx8t33matrgcsdx6c0cvmtevrfgz
+Wallet Address (Testnet):     mmjF9M1saNs7vjCGaSDaDHvFAtTgUNtfrJ
+Wallet cashAddress (Testnet): bchtest:qpzz8n7jp6847yyx8t33matrgcsdx6c0cvleatp707
+```
+
 # Requirements for the example:
 
 * A C++11 compiler, currently minimum [GCC 4.8.0](https://gcc.gnu.org/projects/cxx0x.html) or Clang based on [LLVM 3.5](http://llvm.org/releases/3.5.0/docs/ReleaseNotes.html).
