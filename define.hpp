@@ -16,5 +16,4 @@ const size_t minimum_seed_bits = 128;
  */
 const size_t minimum_seed_size = minimum_seed_bits / libbitcoin::byte_bits;
 
-
-#endif //BITPRIM_CORE_LIB_EXAMPLE_DEFINE_HPP
+#endif // BITPRIM_CORE_LIB_EXAMPLE_DEFINE_HPP
