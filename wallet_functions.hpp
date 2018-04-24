@@ -6,6 +6,7 @@
 #define BITPRIM_CORE_LIB_EXAMPLE_WALLET_FUNCTIONS_HPP
 
 #include "define.hpp"
+#include <bitcoin/bitcoin/multi_crypto_support.hpp>
 #include <bitcoin/bitcoin/wallet/ec_private.hpp>
 #include <bitcoin/bitcoin/wallet/hd_private.hpp>
 #include <bitcoin/bitcoin/wallet/payment_address.hpp>
@@ -86,6 +87,19 @@ std::string priv_key_to_wif(libbitcoin::ec_secret const &priv_key,
   libbitcoin::wallet::ec_private wif(priv_key, version, compress);
 
   return wif.encoded();
+}
+
+// Creates a payment_address using a cashAddr string
+libbitcoin::wallet::payment_address
+cashAddr_to_payment_address(std::string const &address, bool mainnet = true) {
+  // Encode a private key to WIF
+
+  libbitcoin::set_cashaddr_prefix("bitcoincash");
+  if (!mainnet) {
+    libbitcoin::set_cashaddr_prefix("bchtest");
+  }
+  const libbitcoin::wallet::payment_address new_address(address);
+  return new_address;
 }
 
 #endif // BITPRIM_CORE_LIB_EXAMPLE_WALLET_FUNCTIONS_HPP
